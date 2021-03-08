@@ -1,0 +1,20 @@
+﻿@model InvoiceViewModel
+@{
+    ViewBag.Title = "Invoices";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Content/js/pages/invoices.js?v=@DateTime.Now.Day"></script>
+
+<div class="row">
+    <div class="col-12">
+        <div id="invoicesFilter">
+            @Html.Partial("~/Views/Invoices/Partial/InvoicesFilter.cshtml", Model.Filter)
+        </div>
+    </div>
+    <div class="col-12">
+        <div id="invoicesList">
+            @Html.Partial("~/Views/Invoices/Partial/InvoicesList.cshtml", Model.List)
+        </div>
+    </div>
+</div>

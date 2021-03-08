@@ -1,0 +1,101 @@
+﻿body{
+    /* overflow-x: hidden; */
+}
+input[type="search"]{
+    /* width: 160px !important; */
+    margin: auto;
+    
+}
+.style .btn{
+    font-size: 15px;
+}
+.pagination-filter-form .select2-hidden-accessible{
+    position: relative !important;
+}
+#AssignedVehiclesList input[type="search"]{
+    width: 160px !important;
+    margin: auto;
+}
+
+.add-new-certificate .select2-container ,
+.add-new-certificate .select2-selection,
+.add-new-certificate input[type="search"],
+.add-new-certificate .select2-search--dropdown .select2-search__field
+{
+width: 100% !important;
+}
+.btn.dropdown-toggle{
+    background: #fff;
+    border: 1px solid #ccc;
+}
+@media only screen and (max-width: 416px) {
+    .select2-container , .select2-selection{
+        width: 130px !important;
+    }
+    #tblAssignedVehicles select.form-control {
+        width: 100%  !important;
+    } 
+    #tblAssignedVehicles .datepicker {
+        width: 100% !important;
+    }
+    #Filter_CertificationType{ 
+        width: 190px !important;
+        }
+        .custom-file-upload{
+            width: 115px;
+        }
+}
+
+
+@media only screen and (max-width: 416px) {
+    .datepicker{
+        width: 100px !important;
+    }
+    .sp-v{
+        overflow-x: scroll;
+        display: block !important;
+    }
+    .sp-v label{
+       font-size: 15px;
+      
+    }
+    .sp-v input{
+        text-align: center;
+        margin-bottom: 3px;
+        width: 100% !important;
+    }
+}
+.sp-v {
+        display: flex;
+        justify-content: space-around;
+}
+.sp-v input{
+    text-align: center;
+    width: 306px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle  */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+ 
+
+.emp{
+    width: 100% !important;
+}

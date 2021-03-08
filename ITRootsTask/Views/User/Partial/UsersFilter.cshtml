@@ -1,0 +1,21 @@
+﻿@model UserFilterDTO
+@using GeneralResources = ITRootsTask.LocalResources.MainResource;
+
+
+<div class="shadow-bordered-div">
+    <form id="UsersFilterForm" data-ajax="true" data-ajax-method="get" url="/User/Index" data-target="#UsersList" class="pagination-filter-form p-1">
+        <div class="row">
+            <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                <div class="form-group">
+                    @Html.TextBoxFor(x => x.Search, new { @type = "search", @class = "form-control m-1", @placeholder = "search ... " })
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-sm-12 col-12">
+                <div class="form-group">
+                    <button class="btn btn-primary m-1"><i class="fa fa-search"></i>&nbsp;@GeneralResources.Search</button>
+                    <button type="button" class="btn btn-secondary m-1" onclick="ResetSearch(this)"><i class="fa fa-redo"></i>&nbsp;@GeneralResources.Reset</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

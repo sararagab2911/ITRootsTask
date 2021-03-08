@@ -1,0 +1,65 @@
+﻿@model User
+@using GeneralResources = ITRootsTask.LocalResources.MainResource;
+
+@using (Ajax.BeginForm("Save", "User", new AjaxOptions { HttpMethod = "POST", OnSuccess = "successSavingUser" }, new { }))
+{
+    @Html.HiddenFor(x => x.Id)
+    @Html.AntiForgeryToken()
+    if (Model != null)
+    {
+        @Html.HiddenFor(x => x.Id)
+        @Html.HiddenFor(x => x.CreatedBy)
+        @Html.HiddenFor(x => x.createdOn, new { Value = Model.createdOn.ToString("yyyy/MM/dd hh:mm:ss") })
+    }
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                @Html.LabelFor(x => x.FullName)
+                @Html.ValidationMessageFor(x => x.FullName, "", new { @class = "text-danger " })
+                @Html.TextBoxFor(x => x.FullName, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
+                @Html.LabelFor(x => x.Username)
+                @Html.ValidationMessageFor(x => x.Username, "", new { @class = "text-danger " })
+                @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
+                @Html.LabelFor(x => x.Email)
+                @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
+                @Html.LabelFor(x => x.Phone)
+                @Html.ValidationMessageFor(x => x.Phone, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+            </div>
+        </div>
+        @if (Model.Id == 0)
+        {
+            <div class="col-12">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.Password)
+                    @Html.ValidationMessageFor(x => x.Password, "", new { @class = "text-danger" })
+                    @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+                </div>
+            </div>
+        }
+        <div class="col-12">
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-end border-top">
+        <button type="submit" class="btn btn-secondary m-1">@GeneralResources.Save</button>
+        <button type="button" class="btn btn-danger m-1" data-dismiss="modal">@GeneralResources.Close</button>
+    </div>
+}
+
+@Html.Partial("~/Views/Shared/Partial/_JQValidationPartial.cshtml")
+

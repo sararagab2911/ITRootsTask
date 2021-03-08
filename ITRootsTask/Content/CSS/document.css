@@ -1,0 +1,20 @@
+﻿
+table {
+    width: 100% !important;
+}
+
+.table-bordered {
+    border: 1px solid #dee2e6;
+    border-collapse: collapse;
+}
+
+    .table-bordered th,
+    .table-bordered td {
+        border: 1px solid #dee2e6;
+    }
+
+    .table-bordered thead th,
+    .table-bordered thead td {
+        border-bottom-width: 2px;
+    }
+

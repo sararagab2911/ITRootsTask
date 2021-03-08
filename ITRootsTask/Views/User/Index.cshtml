@@ -1,0 +1,20 @@
+﻿@model UserViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Content/js/pages/users.js?v=@DateTime.Now.Day"></script>
+
+<div class="row">
+    <div class="col-12">
+        <div id="UsersFilter">
+            @Html.Partial("~/Views/User/Partial/UsersFilter.cshtml", Model.Filter)
+        </div>
+    </div>
+    <div class="col-12">
+        <div id="UsersList">
+            @Html.Partial("~/Views/User/Partial/UsersList.cshtml", Model.List)
+        </div>
+    </div>
+</div>

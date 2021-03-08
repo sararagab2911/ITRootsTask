@@ -1,0 +1,50 @@
+﻿@model UserLoginDTO
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link rel="icon" type="image/png" href="~/Content/images/logo.jpeg">
+    @Html.Partial("~/Views/Shared/Partial/_GlobalVariables.cshtml")
+    @Html.Partial("~/Views/Shared/Partial/_ResourcePartial.cshtml")
+</head>
+<body>
+    @using (Html.BeginForm("Login", "Auth"))
+    {
+        <div class="container d-flex justify-content-center">
+            <div class="login-box">
+                <div class="form-group text-center">
+                    <label class="text-danger font-weight-bold">@ViewBag.LoginErrors</label>
+                    <label class="text-success font-weight-bold">@(TempData["SuccessMsg"])</label>
+                </div>
+                <div class="form-group">
+                    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control", @placeholder = "Username" })
+                    @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.PasswordFor(x => x.Password, new { @class = "form-control", @placeholder = "Password" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label>
+                        @Html.CheckBoxFor(m => m.RememberMe)
+                        <span>Remember Me</span>
+                    </label>
+                </div>
+                <div class="form-group text-center">
+                    <input type="submit" class="btn btn-success form-control" value="Login" />
+                    <a class="mt-4" href="@Url.Action("Register","Auth")">Register</a>
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>
+
+
+@Html.Partial("~/Views/Shared/Partial/_JQValidationPartial.cshtml")

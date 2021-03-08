@@ -1,0 +1,47 @@
+﻿
+@model IPagedList<Invoice>
+@using GeneralResources = ITRootsTask.LocalResources.MainResource;
+
+
+<div class="table-responsive mb-3 shadow" @(Model.Count == 0 ? "hidden" : "")>
+    <table class="table" id="tblInvoices">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>@GeneralResources.InvoiceNumber</th>
+                <th>@GeneralResources.TotalPrice</th>
+                <th>@GeneralResources.Edit</th>
+                <th>@GeneralResources.Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="td-small"><span class="row-index"></span></td>
+                    <td><b>@item.InvoiceNumber</b></td>
+                    <td>@item.TotalPrice</td>
+                    <td class="td-small"><a class="btn btn-secondary" href="/Invoices/InvoiceData/@item.Id"><i class="fa fa-edit"></i></a> </td>
+                    <td class="td-small"><button class="btn btn-danger" onclick="deleteInvoice('@item.Id')"><i class="fa fa-trash"></i></button> </td>
+                </tr>
+                <tr @(item.InvoiceDetails.Count == 0 ? "hidden" : "") class="exclude">
+                    <td colspan="5" class="patchs-row border-top-0 pl-5 pr-5">
+                        <div class="d-flex justify-content-start">
+                            @foreach (var invoiceDetail in item.InvoiceDetails)
+                            {
+                                <div class="patch patch-theme">@invoiceDetail.ProductName (@invoiceDetail.Quantity) (@invoiceDetail.Price)</div>
+                            }
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="pagedList text-center" data-target="#invoicesList">
+    @if (Model.Count > 0)
+    {
+        @Html.PagedListPager(Model, page => Url.Action("Index", "Invoices", new { page = page }))
+    }
+</div>
+

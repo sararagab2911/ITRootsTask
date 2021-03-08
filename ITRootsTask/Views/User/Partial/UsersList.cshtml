@@ -1,0 +1,50 @@
+﻿@model IPagedList<User>
+@using GeneralResources = ITRootsTask.LocalResources.MainResource;
+
+
+<div class="table-responsive mb-3 shadow" @(Model.Count == 0 ? "hidden" : "")>
+    <table class="table table-hover" id="tblUsers">
+        <thead>
+            <tr>
+                   <th>
+                    @if (ReadSession.User.Roles.ToLower() == "admin")
+                    {
+                        <a href="#" class="plus" onclick="addUser()"><i class="fa fa-plus-circle"></i></a>
+
+                    }
+                    </th>
+                    <th>@GeneralResources.FullName</th>
+                    <th>@GeneralResources.Email</th>
+                    <th>@GeneralResources.Phone</th>
+                    @if (ReadSession.User.Roles.ToLower() == "admin")
+                    {
+                        <th>@GeneralResources.Edit</th>
+                        <th>@GeneralResources.Delete</th>
+                    }
+                </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td class="td-small"><span class="row-index"></span></td>
+                <td>@item.FullName</td>
+                <td>@item.Email</td>
+                <td>@item.Phone</td>
+                @if (ReadSession.User.Roles.ToLower() == "admin")
+                {
+                    <td class="td-small"><button class="btn btn-secondary" onclick="editUser('@item.Id')"><i class="fa fa-edit"></i></button> </td>
+                    <td class="td-small"><button class="btn btn-danger" onclick="deleteUser('@item.Id')"><i class="fa fa-trash"></i></button> </td>
+                }
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="pagedList text-center" data-target="#UsersList">
+    @if (Model.Count > 0)
+    {
+        @Html.PagedListPager(Model, page => Url.Action("Index", "User", new { page = page }))
+    }
+</div>
+

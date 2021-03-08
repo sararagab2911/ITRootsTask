@@ -1,0 +1,19 @@
+﻿@using ITRootsTask.Helpers
+
+
+<!-- SESSION VARIABLES -->
+<script>
+    var USER_ID = '@(ReadSession.User.Id)';
+</script>
+
+
+<!-- LOCALIZATION VARIABLES -->
+<script>
+    var IsRTL = '@ReadSession.IsArabic' == 'True';
+
+    var YES = '@ReadSession.IsArabic' == 'True' ? 'نعم' : 'YES';
+    var CANCEL = '@ReadSession.IsArabic' == 'True' ? 'إلغاء' : 'CANCEL';
+    var ARE_YOU_SURE = '@ReadSession.IsArabic' == 'True' ? 'هل أنت متأكد' : 'ARE YOU SURE';
+
+   var PleaseFillRequiredFields = '@ReadSession.IsArabic' == 'True' ? 'من فضلك أدخل الحقول المطلوبة' : 'Please Fill Required Rows';
+</script>

@@ -1,0 +1,441 @@
+﻿@import 'media/media.css';
+@import 'variables.css';
+
+
+html {
+    font-size: 14px;
+}
+
+body {
+    background-color: #cccccc38;
+    direction: ltr;
+    margin-bottom: 60px;
+}
+
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+
+/* Loading  */
+.loading-ok .loading {
+    display: flex;
+    justify-content: center;
+}
+
+.loading-ok {
+    overflow: hidden;
+}
+
+.loading {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: none;
+    background: #2125299c;
+    top: 0;
+    z-index: 100000000000;
+}
+
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+.fancybox i {
+    z-index: 1 !important;
+}
+
+
+/* Custom classes ----------------------------------------------- */
+.scroll {
+    overflow: scroll;
+}
+
+.disabled {
+    border: 1px solid #999999;
+    background-color: #d9d9d9;
+    color: #666666;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+input[type=checkbox] {
+    transform: scale(1.5);
+}
+
+.w-10 {
+    width: 10%;
+}
+
+.w-20 {
+    width: 20%;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-60 {
+    width: 60%;
+}
+
+.w-70 {
+    width: 70%;
+}
+
+.w-80 {
+    width: 80%;
+}
+
+.w-90 {
+    width: 90%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.pointer-events-none {
+    pointer-events: none !important;
+}
+
+
+.btn.dropdown-toggle {
+}
+
+:not(.input-group) > .bootstrap-select.form-control:not([class*=col-]) {
+    width: 60%;
+}
+
+.btn.dropdown-toggle:focus {
+    outline: none !important;
+}
+
+.bootstrap-select .bs-ok-default::after {
+    width: 0.3em;
+    height: 0.6em;
+    border-width: 0 0.1em 0.1em 0;
+    transform: rotate(45deg) translateY(0.5rem);
+}
+
+
+/* Tabel */
+.table {
+    margin-bottom: 0px !important;
+}
+
+    .table thead tr {
+        background: var(--theme-bk-color);
+        color: #fff;
+        font-size: 12px;
+    }
+
+    .table tbody tr {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .table td {
+        vertical-align: initial !important;
+    }
+
+tr.red-shadow td {
+    background-color: rgba(238, 85, 85, 0.3);
+}
+
+
+.table-striped tbody tr {
+    font-size: 12px;
+    text-align: center;
+}
+
+
+/* Custom input file */
+input[type="file"].hide {
+    display: none;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: #fff;
+    background: #007bff;
+    border-radius: 15px;
+    padding: 10px 18px;
+}
+
+.camera-label {
+    cursor: pointer;
+    color: #fff;
+    background: #007bff;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+    .camera-label .fa-camera {
+        font-size: 14px;
+    }
+
+
+.required:after {
+    content: ' *';
+    color: red;
+}
+
+
+.emp label[for*='file-upload-'] {
+    width: 150px;
+    padding: 4px;
+}
+
+
+.border-radius-50 {
+    border-radius: 50% !important;
+}
+
+.scroll-400 {
+    overflow-x: auto;
+    max-height: 400px;
+}
+
+
+.filter-form-buttons {
+    padding-top: 24px;
+}
+
+
+
+
+.sb-nav-fixed #layoutSidenav #layoutSidenav_content {
+    padding-left: 225px !important;
+    padding-right: 0px !important;
+}
+
+
+.td-small {
+    width: 75px;
+}
+
+.td-meduim {
+    width: 150px;
+}
+
+
+.shadow-bordered-div {
+    padding: 25px 10px;
+    border: 1px solid rgba(0,0,0,0.1);
+    margin: 25px 0px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+    background-color: white;
+}
+
+.shadow {
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+}
+
+.plus {
+    font-size: 22px;
+}
+
+.cursor-pointer:hover {
+    cursor: pointer !important;
+}
+
+.table-responsive {
+    background-color: white;
+}
+
+.patchs-row:hover {
+    background-color: transparent;
+}
+
+.patch {
+    border-radius: 25px;
+    padding: 10px;
+    margin: 0px 10px;
+    min-width: 50px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.patch-default {
+    box-shadow: 1px 1px 5px 5px rgba(0,0,0,0.1);
+}
+
+.patch-secondary {
+    background-color: #666666;
+    color: aliceblue;
+}
+
+.patch-info {
+    background-color: lightblue;
+}
+
+.patch-theme {
+    background-color: var(--theme-bk-color);
+    color: var(--theme-color);
+}
+
+.patch-success {
+    background-color: lightgreen;
+    color: white;
+}
+
+.patch-warning {
+    background-color: orangered;
+    color: white;
+}
+
+.patch-danger {
+    background-color: lightcoral;
+    color: whitesmoke;
+}
+
+.group-active {
+    background-color: #f2f2f2;
+    color: black !important;
+}
+
+    .group-active .sb-nav-link-icon {
+        color: black !important;
+    }
+
+    .group-active .sb-sidenav-collapse-arrow {
+        color: black !important;
+    }
+
+.pt-27 {
+    padding-top: 27px;
+}
+
+.circular {
+    border-radius: 50%;
+}
+
+
+.increase-icon {
+    font-size: 30px;
+    margin: 5px;
+    color: green;
+}
+
+.decrease-icon {
+    font-size: 30px;
+    margin: 5px;
+    color: red;
+}
+
+
+
+.occordion-header {
+    background-color: var(--theme-bk-color) !important;
+}
+
+    .occordion-header:hover {
+        cursor: pointer;
+    }
+
+    .occordion-header .btn-link {
+        color: var(--theme-color) !important;
+    }
+
+
+.floor-table-dv {
+    border: 1px solid rgba(0,0,0,0.1);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow: 1px 1px 10px 10px rgba(0,0,0,0.1);
+}
+
+    .floor-table-dv .table-image {
+        width: 8vw;
+    }
+
+
+
+.table-number {
+    position: absolute;
+    right: 0;
+    left: unset;
+    top: 0;
+}
+
+
+.floating-btn {
+    font-size: 70px;
+    position: fixed !important;
+    bottom: 25px;
+    left: unset;
+    right: 33px;
+}
+
+    .floating-btn:hover {
+        cursor: pointer;
+    }
+
+
+
+.meal-to-select:hover {
+    cursor: pointer;
+}
+
+.meal-to-select.selected {
+    background-color: lightgreen;
+}
+
+    .meal-to-select.selected .img {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+    }
+
+
+.select2-container {
+    width: 100% !important;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+    .floor-table-dv .table-image {
+        width: 20vw;
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+    .floor-table-dv .table-image {
+        width: 30vw;
+    }
+}

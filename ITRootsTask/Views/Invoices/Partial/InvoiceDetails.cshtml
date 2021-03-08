@@ -1,0 +1,42 @@
+﻿
+@model List<InvoiceDetail>
+@using GeneralResources = ITRootsTask.LocalResources.MainResource;
+
+
+<div class="table-responsive mb-3 shadow">
+    <table id="tblInvoiceDetails" class="table table-hover">
+        <thead>
+            <tr>
+                <th><a href="#" class="plus" onclick="AppendRow()"><i class="fa fa-plus-circle"></i></a></th>
+                <th>@GeneralResources.Product</th>
+                <th>@GeneralResources.Quantity</th>
+                <th>@GeneralResources.Price</th>
+                <th>@GeneralResources.Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{int i = 0;}
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    <span class="row-index">1</span>
+                    <input type="hidden" name="InvoiceDetails[@i].Id" value="@item.Id" />
+                    <input type="hidden" name="InvoiceDetails[@i].InvoiceId" value="@item.InvoiceId" />
+                    <input type="hidden" name="InvoiceDetails[@i].CreatedBy" value="@item.CreatedBy" />
+                    <input type="hidden" name="InvoiceDetails[@i].createdOn" value="@item.createdOn.ToString("yyyy/MM/dd hh:mm:ss")" />
+                </td>
+                <td>
+                    <input type="text" class="form-control required" name="InvoiceDetails[@i].ProductName" value="@item.ProductName" />
+                </td>
+                <td><input type="text" class="form-control number required" name="InvoiceDetails[@i].Quantity" value="@item.Quantity" /></td>
+                <td><input type="text" class="form-control number required" name="InvoiceDetails[@i].Price" value="@item.Price" /></td>
+                <td class="td-small">
+                    <button type="button" class="btn btn-danger" onclick="RemoveDetailRow(this);"><i class="fa fa-trash"></i></button>
+                </td>
+            </tr>
+                i++;
+            }
+        </tbody>
+    </table>
+</div>

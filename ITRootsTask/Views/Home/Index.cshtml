@@ -1,0 +1,8 @@
+﻿@using LayoutResources = ITRootsTask.LocalResources.MainResource;
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="mt-5 text-center">
+    <h1>Welcome: @(ReadSession.User?.FullName) (@(ReadSession.User?.Roles))</h1>
+</div>
